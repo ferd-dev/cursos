@@ -4,11 +4,6 @@ require_once '../config/conexion.php';
 
 class Login
 {
-    public function __construct()
-    {
-        // 
-    }
-
     public function verificar($login, $pass_hash)
     {
         $sql = "SELECT * FROM usuarios 

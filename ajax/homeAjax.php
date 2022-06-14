@@ -12,6 +12,11 @@ switch ($_GET['op']) {
         echo json_encode($rspta);
         break;
 
+    case 'obtenerNumAdmin':
+        $rspta = $home->obtenerNumAdmin();
+        echo json_encode($rspta);
+        break;
+
     case 'obtenerNumCursos':
         $rspta = $home->obtenerNumCursos();
         echo json_encode($rspta);

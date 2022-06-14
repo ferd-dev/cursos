@@ -9,6 +9,12 @@ class Home
         return ejecutarConsultaSimpleFila($sql);
     }
 
+    public function obtenerNumAdmin()
+    {
+        $sql = "SELECT COUNT(id_usuario) AS 'cantidad' FROM usuarios WHERE tipo = 'adm'";
+        return ejecutarConsultaSimpleFila($sql);
+    }
+
     public function obtenerNumCursos()
     {
         $sql = "SELECT COUNT(id_curso) AS 'cantidad' FROM cursos";

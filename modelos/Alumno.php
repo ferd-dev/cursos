@@ -3,36 +3,11 @@ require_once '../config/conexion.php';
 
 class Alumno
 {
-    public function __construct()
-    {
-        // 
-    }
-
     public function listar()
     {
         $sql = "SELECT * FROM usuarios
                 WHERE tipo = 'est'
                 ORDER BY activo ASC";
-        return ejecutarConsulta($sql);
-    }
-
-    public function crear($codigo, $nombre)
-    {
-        $sql = "INSERT INTO codigos (codigo, nombre) 
-                    VALUES('$codigo', '$nombre')";
-        return ejecutarConsulta($sql);
-    }
-
-    public function mostrar($id_codigo)
-    {
-        $sql = "SELECT * FROM codigos WHERE id_codigo = '$id_codigo'";
-        return ejecutarConsultaSimpleFila($sql);
-    }
-
-    public function editar($id_codigo, $codigo, $nombre)
-    {
-        $sql = "UPDATE codigos SET codigo = '$codigo', nombre = '$nombre'
-                    WHERE id_codigo = '$id_codigo' ";
         return ejecutarConsulta($sql);
     }
 

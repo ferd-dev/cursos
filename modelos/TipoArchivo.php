@@ -3,11 +3,6 @@ require_once '../config/conexion.php';
 
 class TipoArchivo
 {
-    public function __construct()
-    {
-        // 
-    }
-
     public function listar()
     {
         $sql = "SELECT * FROM tipo_archivos
