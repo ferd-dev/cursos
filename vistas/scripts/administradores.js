@@ -1,6 +1,6 @@
 let tabla;
 $(document).ready(function () {
-	$('#menuCursos').addClass('active');
+	$('#menuAdmin').addClass('active');
 	init();
 });
 
@@ -9,7 +9,7 @@ function init() {
 
 	mostrarForm(false);
 
-	$('#frmCursos').submit(function (e) {
+	$('#frmAdmin').submit(function (e) {
 		e.preventDefault();
 		$('#btnGuardar').prop('disabled', true);
 		$('#btnCancelar').prop('disabled', true);
@@ -18,7 +18,7 @@ function init() {
 }
 
 function listar() {
-	tabla = $('#tblCursos')
+	tabla = $('#tblAdmin')
 		.dataTable({
 			columnDefs: [
 				{
@@ -35,7 +35,7 @@ function listar() {
 				url: '//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json',
 			},
 			ajax: {
-				url: '../ajax/cursoAjax.php?op=listar',
+				url: '../ajax/administradorAjax.php?op=listar',
 				type: 'get',
 				dataType: 'json',
 				error: function (e) {
@@ -53,11 +53,11 @@ function listar() {
 }
 
 function guardar_o_editar() {
-	formData = new FormData($('#frmCursos')[0]);
+	formData = new FormData($('#frmAdmin')[0]);
 
 	$.ajax({
 		type: 'POST',
-		url: '../ajax/cursoAjax.php?op=guardaroeditar',
+		url: '../ajax/administradorAjax.php?op=guardaroeditar',
 		data: formData,
 		contentType: false,
 		processData: false,
@@ -75,28 +75,31 @@ function guardar_o_editar() {
 	});
 }
 
-function mostrar(id_curso) {
+function mostrar(id_usuario) {
 	$.post(
-		'../ajax/cursoAjax.php?op=mostrar',
+		'../ajax/administradorAjax.php?op=mostrar',
 		{
-			id_curso: id_curso,
+			id_usuario: id_usuario,
 		},
 		function (data) {
 			data = JSON.parse(data);
 			console.log(data);
 			mostrarForm(true);
+			$('#password').prop('disabled', true);
+			$('#password2').prop('disabled', true);
 
-			$('#id_curso').val(data.id_curso);
+			$('#id_usuario').val(data.id_usuario);
 			$('#nombre').val(data.nombre);
-			$('#materia').val(data.materia);
-			$('#descripcion').val(data.descripcion);
+			$('#apellidos').val(data.apellidos);
+			$('#telefono').val(data.telefono);
+			$('#correo').val(data.correo);
 		}
 	);
 }
 
-function activar(id_curso) {
+function activar(id_usuario) {
 	Swal.fire({
-		title: '¿Esta segur@ de activar el curso?',
+		title: '¿Esta segur@ de activar el administrador?',
 		icon: 'warning',
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',
@@ -106,9 +109,9 @@ function activar(id_curso) {
 	}).then((result) => {
 		if (result.isConfirmed) {
 			$.post(
-				'../ajax/cursoAjax.php?op=activar',
+				'../ajax/administradorAjax.php?op=activar',
 				{
-					id_curso: id_curso,
+					id_usuario: id_usuario,
 				},
 				function (data) {
 					data = JSON.parse(data);
@@ -124,9 +127,10 @@ function activar(id_curso) {
 	});
 }
 
-function desactivar(id_curso) {
+function desactivar(id_usuario) {
+	console.log(id_usuario);
 	Swal.fire({
-		title: '¿Esta segur@ de desactivar el curso?',
+		title: '¿Esta segur@ de desactivar al administrador?',
 		icon: 'warning',
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',
@@ -136,9 +140,9 @@ function desactivar(id_curso) {
 	}).then((result) => {
 		if (result.isConfirmed) {
 			$.post(
-				'../ajax/cursoAjax.php?op=desactivar',
+				'../ajax/administradorAjax.php?op=desactivar',
 				{
-					id_curso: id_curso,
+					id_usuario: id_usuario,
 				},
 				function (data) {
 					data = JSON.parse(data);
@@ -161,6 +165,8 @@ function mostrarForm(flag) {
 		$('.btnGuardar').prop('disabled', false);
 		$('#tabla').hide();
 		$('.btnAgregar').hide();
+		$('#password').prop('disabled', false);
+		$('#password2').prop('disabled', false);
 	} else {
 		$('#formulario').hide();
 		$('#tabla').show();
@@ -173,9 +179,9 @@ function cancelarForm() {
 }
 
 function limpiar() {
-	formulario = $('#frmCursos');
+	formulario = $('#frmAdmin');
 	formulario[0].reset();
-	$('#id_curso').val('');
+	$('#id_usuario').val('');
 }
 
 function mensajeExito(mensaje) {

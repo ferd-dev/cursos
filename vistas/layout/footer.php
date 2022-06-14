@@ -35,3 +35,23 @@
 </body>
 
 </html>
+
+<!-- Funcion para serrar sesión -->
+<script>
+    $("#salir").click(function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: '¿Esta segur@ de salir del Sistema?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '!Sí, Salir!',
+            cancelButtonText: 'No, cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "../ajax/loginAjax.php?op=salir";
+            }
+        });
+    });
+</script>

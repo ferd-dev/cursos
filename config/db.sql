@@ -9,7 +9,7 @@ create table usuarios(
     activo tinyint(1) not null
 );
 
-insert into usuarios(nombre, apellidos, telefono, correo, password, tipo, activo) values('Administrador', 'ADM', '99999', 'admin', 'admin', 'adm', 1);
+insert into usuarios(nombre, apellidos, telefono, correo, password, tipo, activo) values('Administrador', 'ADM', '99999', 'admin@gmail.com', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', 'adm', 1);
 
 create table tipo_archivos(
     id_tipo_archivo int(11) primary key auto_increment,

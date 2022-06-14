@@ -19,7 +19,7 @@
         </nav>
         <div class="main-sidebar sidebar-style-2">
             <aside id="sidebar-wrapper">
-                <?php $ex = $_SESSION['tipo'] == 'adm' ? 'homeAdmin.php' : 'homeEst.php' ?>
+                <?php $ex = $_SESSION['tipo'] == 'adm' ? 'homeAdmin.php' : 'cursosEstudiante.php' ?>
                 <div class="sidebar-brand">
                     <a href="<?= $ex ?>">Cursos</a>
                 </div>
@@ -38,6 +38,12 @@
                             <a class="nav-link" href="alumnos.php">
                                 <i class="fas fa-user-graduate"></i>
                                 <span>Alumnos</span>
+                            </a>
+                        </li>
+                        <li id="menuAdmin">
+                            <a class="nav-link" href="administradores.php">
+                                <i class="fas fa-user-shield"></i>
+                                <span>Administradores</span>
                             </a>
                         </li>
                         <li id="menuCursos">
@@ -67,7 +73,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="../ajax/loginAjax.php?op=salir">
+                        <a class="nav-link" href="" id="salir">
                             <i class="far fa-times-circle"></i>
                             <span>Salir</span>
                         </a>
