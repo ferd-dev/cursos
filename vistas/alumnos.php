@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["id_usuario"])) {
-    header("Location: ../login.php");
+    header("Location: ../vistas/login.php");
 } else {
     require_once 'layout/header.php';
     require_once 'layout/sidebar.php';

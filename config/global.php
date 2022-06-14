@@ -1,7 +1,7 @@
 <?php
 
 // CONEXION LOCAL 
-define("DB_HOST", "localhost");
+define("DB_HOST", "localhost:3310");
 define("DB_NAME", "cursos");
 define("DB_USERNAME", "root");
 define("DB_PASSWORD", "");

@@ -27,4 +27,13 @@ class CursoEstudiante
                 ORDER BY id_archivo DESC";
         return ejecutarConsulta($sql);
     }
+
+    public function buscar($frase)
+    {
+        $sql = "SELECT * FROM cursos
+                WHERE activo = 1
+                AND (nombre LIKE '%$frase%' OR descripcion LIKE '%$frase%' OR materia LIKE '%$frase%')
+                ORDER BY id_curso DESC";
+        return ejecutarConsulta($sql);
+    }
 }

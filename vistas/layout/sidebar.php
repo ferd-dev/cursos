@@ -60,6 +60,12 @@
                             </a>
                         </li>
                     <?php endif; ?>
+                    <li id="menuChat">
+                        <a class="nav-link" href="chat.php">
+                            <i class="fas fa-comment-dots"></i>
+                            <span>Chat</span>
+                        </a>
+                    </li>
                     <li>
                         <a class="nav-link" href="../ajax/loginAjax.php?op=salir">
                             <i class="far fa-times-circle"></i>

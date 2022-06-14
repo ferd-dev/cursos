@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["id_usuario"])) {
-    header("Location: ../login.php");
+    header("Location: ../vistas/login.php");
 } else {
     require_once 'layout/header.php';
     require_once 'layout/sidebar.php';
@@ -11,6 +11,7 @@ if (!isset($_SESSION["id_usuario"])) {
 
 <!-- Main Content -->
 <div class="main-content">
+    <input class="form-control mt-3 p-4" type="text" id="buscar" placeholder="Buscar..." style="width: 50%;">
     <section class="section mt-5">
         <div class="row" id="cursos">
 

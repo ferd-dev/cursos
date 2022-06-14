@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["id_usuario"])) {
-    header("Location: ../login.php");
+    header("Location: ../vistas/login.php");
 } else {
     require_once 'layout/header.php';
     require_once 'layout/sidebar.php';
@@ -18,6 +18,7 @@ if (!isset($_SESSION["id_usuario"])) {
                 <div class="hero bg-info text-white">
                     <div class="hero-inner">
                         <h1 id="nombreCurso"></h1>
+                        <span id="materia"></span>
                         <p id="descripcionCurso"></p>
                         <br>
                         <p class="h6">
@@ -47,4 +48,4 @@ if (!isset($_SESSION["id_usuario"])) {
 </div>
 
 <?php require_once 'layout/footer.php'; ?>
-<script src="scripts/cursosEstudiante.js"></script>
+<script src="scripts/verCurso.js"></script>

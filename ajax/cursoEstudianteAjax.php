@@ -47,4 +47,21 @@ switch ($_GET['op']) {
         }
         echo json_encode($datos);
         break;
+
+    case 'buscar':
+        $palabra = isset($_POST['palabra']) ? limpiarCadena($_POST['palabra']) : "";
+        $rspta = $cursoEstudiante->buscar($palabra);
+        $datos = array();
+        while ($fetch = $rspta->fetch_object()) {
+            $datos[] = array(
+                'id_curso' => $fetch->id_curso,
+                'nombre' => $fetch->nombre,
+                'descripcion' => $fetch->descripcion,
+                'materia' => $fetch->materia,
+                'fecha_creada' => $fetch->fecha_creada,
+                'fecha_editada' => $fetch->fecha_editada
+            );
+        }
+        echo json_encode($datos);
+        break;
 }

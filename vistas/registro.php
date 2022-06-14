@@ -1,11 +1,23 @@
-<?php require_once 'layout/headerLogin.php'; ?>
+<?php
+session_start();
+
+if (isset($_SESSION["id_usuario"])) {
+    if ($_SESSION["tipo"] == "adm") {
+        header("Location: homeAdmin.php");
+    } else {
+        header("Location: cursosEstudiante.php");
+    }
+} else {
+    require_once 'layout/headerLogin.php';
+}
+?>
 <div id="app">
     <section class="section">
         <div class="container mt-5">
             <div class="row">
                 <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
                     <div class="login-brand">
-                        <img src="../public/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
+                        <img src="../public/img/logo1.png" alt="logo" width="20%" class="shadow-light">
                     </div>
 
                     <div class="card card-primary">

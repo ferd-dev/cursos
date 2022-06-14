@@ -23,6 +23,7 @@ switch ($_GET['op']) {
         $num = 1;
         $datos = array();
         while ($reg = $rspta->fetch_object()) {
+            $descripcion = substr($reg->descripcion, 0, 15) . "...";
             $datos[] = array(
                 "0" => $num,
                 "1" => $reg->activo == 1
@@ -39,7 +40,7 @@ switch ($_GET['op']) {
                         <i class="fas fa-check"></i>
                        </div>',
                 "2" => $reg->nombre,
-                "3" => $reg->descripcion,
+                "3" => $descripcion,
                 "4" => $reg->nombre_tipo_archivo,
                 "5" => '<span class="badge ">
                             <a href="../public/archivos/' . $reg->ruta . '" download="' . $reg->nombre . '">

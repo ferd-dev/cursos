@@ -27,6 +27,7 @@
 
 <!-- Page Specific JS File -->
 <script src="../public/js/page/modules-datatables.js"></script>
+<!-- <script src="../public/js/page/components-chat-box.js"></script> -->
 
 <!-- Template JS File -->
 <script src="../public/js/scripts.js"></script>
