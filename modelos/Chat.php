@@ -5,8 +5,9 @@ class Chat
 {
     public function listar()
     {
-        $sql = "SELECT * FROM mensajes
-                ORDER BY id_mensaje ASC";
+        $sql = "SELECT m.*, u.nombre FROM mensajes AS m
+                INNER JOIN usuarios AS u ON m.id_usuario = u.id_usuario
+                ORDER BY m.id_mensaje ASC";
         return ejecutarConsulta($sql);
     }
 

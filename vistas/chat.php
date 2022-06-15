@@ -29,18 +29,7 @@ if (!isset($_SESSION["id_usuario"])) {
                                 <i class="fas fa-circle text-success mr-2" title="Online" data-toggle="tooltip"></i> Chat
                             </h4>
                         </div>
-                        <div class="card-body chat-content" id="mychat">
-                            <div class="chat-item chat-right">
-                                <img src="../public/img/avatar/avatar-1.png" alt="">
-                                <div class="chat-details">
-                                    <div class="chat-text">
-                                        <i>You have blocked Ryan</i>
-                                    </div>
-                                    <div class="chat-time">
-                                        06:37
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="card-body chat-content" id="charBody">
                         </div>
                         <div class="card-footer chat-form">
                             <form id="mensaje">

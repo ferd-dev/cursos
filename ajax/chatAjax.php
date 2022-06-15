@@ -19,7 +19,8 @@ switch ($_GET['op']) {
                 'id_mensaje' => $fetch->id_mensaje,
                 'id_usuario' => $fetch->id_usuario,
                 'mensaje' => $fetch->mensaje,
-                'fecha_mensaje' => $fetch->fecha_mensaje
+                'fecha_mensaje' => $fetch->fecha_mensaje,
+                'nombre' => $fetch->nombre
             );
         }
         echo json_encode($datos);
