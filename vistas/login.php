@@ -2,10 +2,10 @@
 session_start();
 
 if (isset($_SESSION["id_usuario"])) {
-    if ($_SESSION["tipo"] == "adm") {
-        header("Location: homeAdmin.php");
-    } else {
+    if ($_SESSION["tipo"] == "est") {
         header("Location: cursosEstudiante.php");
+    } else {
+        header("Location: homeAdmin.php");
     }
 } else {
     require_once 'layout/headerLogin.php';
