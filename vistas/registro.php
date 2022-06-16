@@ -30,22 +30,29 @@ if (isset($_SESSION["id_usuario"])) {
                                 <div class="row">
                                     <div class="form-group col-6">
                                         <label for="nombre">Nombre</label>
-                                        <input id="nombre" type="text" class="form-control" name="nombre" autofocus>
+                                        <input id="nombre" type="text" class="form-control" name="nombre" maxlength="100" autofocus>
                                     </div>
                                     <div class="form-group col-6">
                                         <label for="apellidos">Apellidos</label>
-                                        <input id="apellidos" type="text" class="form-control" name="apellidos">
+                                        <input id="apellidos" type="text" class="form-control" name="apellidos" maxlength="100">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-group col-6">
                                         <label for="telefono">Teléfono</label>
-                                        <input id="telefono" type="text" class="form-control" name="telefono" autofocus>
+                                        <input id="telefono" type="text" class="form-control" name="telefono" maxlength="13">
                                     </div>
                                     <div class="form-group col-6">
                                         <label for="correo">Corréo</label>
-                                        <input id="correo" type="text" class="form-control" name="correo">
+                                        <input id="correo" type="email" class="form-control" name="correo" maxlength="150">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label for="matricula">Matrícula</label>
+                                        <input id="matricula" type="text" maxlength="20" class="form-control" name="matricula" autofocus>
                                     </div>
                                 </div>
 

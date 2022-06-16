@@ -4,10 +4,10 @@ require_once '../config/conexion.php';
 
 class Registro
 {
-    public function registrar($nombre, $apellidos, $telefono, $correo, $password)
+    public function registrar($nombre, $apellidos, $telefono, $matricula, $correo, $password)
     {
-        $sql = "INSERT INTO usuarios (nombre, apellidos, telefono, correo, password, tipo, activo) 
-                VALUES ('$nombre', '$apellidos', '$telefono', '$correo', '$password', 'est', 1)";
+        $sql = "INSERT INTO usuarios (nombre, apellidos, telefono, matricula, correo, password, tipo, activo) 
+                VALUES ('$nombre', '$apellidos', '$telefono', '$matricula', '$correo', '$password', 'est', 1)";
         return ejecutarConsulta_retornarID($sql);
     }
 

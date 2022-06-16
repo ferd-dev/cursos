@@ -22,10 +22,10 @@ function iniciarSesion() {
 				Swal.fire(response.mensaje);
 				$('#password').val('');
 			} else if (response.estado == 'exito') {
-				if (response.tipo == 'adm') {
-					window.location.href = 'homeAdmin.php';
-				} else {
+				if (response.tipo == 'est') {
 					window.location.href = 'cursosEstudiante.php';
+				} else {
+					window.location.href = 'homeAdmin.php';
 				}
 			}
 		},

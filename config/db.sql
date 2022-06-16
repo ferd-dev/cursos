@@ -3,9 +3,10 @@ create table usuarios(
     nombre varchar(100) not null,
     apellidos varchar(100) not null,
     telefono char(13) not null unique,
+    matricula char(20),
     correo varchar(150) not null unique,
     password varchar(100) not null,
-    tipo enum('adm', 'est') not null,
+    tipo enum('adm', 'est', 'adm2') not null,
     activo tinyint(1) not null
 );
 

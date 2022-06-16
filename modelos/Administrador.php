@@ -6,15 +6,15 @@ class Administrador
     public function listar()
     {
         $sql = "SELECT * FROM usuarios
-                WHERE tipo = 'adm'
+                WHERE tipo = 'adm2'
                 ORDER BY activo DESC";
         return ejecutarConsulta($sql);
     }
 
     public function crear($nombre, $apellidos, $telefono, $correo, $password)
     {
-        $sql = "INSERT INTO usuarios (nombre, apellidos, telefono, correo, password, tipo, activo) 
-                    VALUES('$nombre', '$apellidos', '$telefono', '$correo', '$password', 'adm', 1)";
+        $sql = "INSERT INTO usuarios (nombre, apellidos, telefono, matricula, correo, password, tipo, activo) 
+                    VALUES('$nombre', '$apellidos', '$telefono', '0', '$correo', '$password', 'adm2', 1)";
         return ejecutarConsulta($sql);
     }
 

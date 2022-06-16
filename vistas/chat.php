@@ -14,10 +14,10 @@ if (!isset($_SESSION["id_usuario"])) {
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Chat grupal</h1>
+            <h1>Mensajes del grupo</h1>
         </div>
         <div class="section-body">
-            <h2 class="section-title">Información del chat</h2>
+            <h2 class="section-title">Información del los mensajes</h2>
             <p class="section-lead">
                 Los mensajes enviados podran ser leidos por todos los usuarios
             </p>
@@ -26,7 +26,7 @@ if (!isset($_SESSION["id_usuario"])) {
                     <div class="card chat-box card-primary" id="mychat">
                         <div class="card-header">
                             <h4>
-                                <i class="fas fa-circle text-success mr-2" title="Online" data-toggle="tooltip"></i> Chat
+                                <i class="fas fa-circle text-success mr-2" title="Online" data-toggle="tooltip"></i> Mensajes
                             </h4>
                         </div>
                         <div class="card-body chat-content" id="charBody">

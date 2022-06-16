@@ -11,6 +11,7 @@ switch ($_GET['op']) {
         $nombre    = isset($_POST["nombre"])      ? limpiarCadena($_POST["nombre"])      : "";
         $apellidos = isset($_POST["apellidos"])   ? limpiarCadena($_POST["apellidos"])   : "";
         $telefono  = isset($_POST["telefono"])    ? limpiarCadena($_POST["telefono"])    : "";
+        $matricula = isset($_POST["matricula"])   ? limpiarCadena($_POST["matricula"])   : "";
         $correo    = isset($_POST["correo"])      ? limpiarCadena($_POST["correo"])      : "";
         $password  = isset($_POST["password"])    ? limpiarCadena($_POST["password"])    : "";
         $password2 = isset($_POST["password2"])   ? limpiarCadena($_POST["password2"])   : "";
@@ -77,13 +78,14 @@ switch ($_GET['op']) {
                     echo json_encode($respuesta);
                 } else {
                     $pass_hash = hash("SHA256", $password);
-                    $id_usuario = $registro->registrar($nombre, $apellidos, $telefono, $correo, $pass_hash);
+                    $id_usuario = $registro->registrar($nombre, $apellidos, $telefono, $matricula, $correo, $pass_hash);
 
                     if ($id_usuario) {
                         $_SESSION["id_usuario"] = $id_usuario;
                         $_SESSION["nombre"]     = $nombre;
                         $_SESSION["apellidos"]  = $apellidos;
                         $_SESSION["telefono"]   = $telefono;
+                        $_SESSION["matricula"]  = $matricula;
                         $_SESSION["correo"]     = $correo;
                         $_SESSION["tipo"]       = "est";
 

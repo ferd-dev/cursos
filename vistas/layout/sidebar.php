@@ -27,7 +27,7 @@
                     <a href="<?= $ex ?>">Cu</a>
                 </div>
                 <ul class="sidebar-menu">
-                    <?php if ($_SESSION['tipo'] == 'adm') : ?>
+                    <?php if ($_SESSION['tipo'] == 'adm' || $_SESSION['tipo'] == 'adm2') : ?>
                         <li id="menuHomeAdmin">
                             <a class="nav-link" href="homeAdmin.php">
                                 <i class="far fa-square"></i>
@@ -40,12 +40,14 @@
                                 <span>Alumnos</span>
                             </a>
                         </li>
-                        <li id="menuAdmin">
-                            <a class="nav-link" href="administradores.php">
-                                <i class="fas fa-user-shield"></i>
-                                <span>Administradores</span>
-                            </a>
-                        </li>
+                        <?php if ($_SESSION['tipo'] == 'adm') : ?>
+                            <li id="menuAdmin">
+                                <a class="nav-link" href="administradores.php">
+                                    <i class="fas fa-user-shield"></i>
+                                    <span>Administradores</span>
+                                </a>
+                            </li>
+                        <?php endif ?>
                         <li id="menuCursos">
                             <a class="nav-link" href="cursos.php">
                                 <i class="fas fa-sitemap"></i>
@@ -69,7 +71,7 @@
                     <li id="menuChat">
                         <a class="nav-link" href="chat.php">
                             <i class="fas fa-comment-dots"></i>
-                            <span>Chat</span>
+                            <span>Mensajes</span>
                         </a>
                     </li>
                     <li>
